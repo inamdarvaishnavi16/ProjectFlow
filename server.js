@@ -1,3 +1,4 @@
+
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -16,6 +17,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/projects", projectRoutes);
 app.use("/api/members", memberRoutes);
 app.use("/api/tasks", taskRoutes);
+
+// ===============================
+// HEALTH CHECK
+// ===============================
+
+app.get("/health", (req, res) => {
+    res.json({
+        status: "ok"
+    });
+});
 
 app.get("/api/health", (req, res) => {
     res.json({
