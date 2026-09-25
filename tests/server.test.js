@@ -26,7 +26,7 @@ describe("ProjectFlow API Tests", () => {
         expect(response.statusCode).toBe(200);
 
         expect(response.body.status)
-            .toBe("ok");
+            .toBe("wrong");
 
     });
 
