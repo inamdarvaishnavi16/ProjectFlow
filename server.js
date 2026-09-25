@@ -34,7 +34,11 @@ app.get("/api/health", (req, res) => {
         message: "ProjectFlow server is running!"
     });
 });
-
+app.get("/api/commit", (req, res) => {
+    res.json({
+        commit: process.env.RENDER_GIT_COMMIT || "local"
+    });
+});
 
 // ===============================
 // START SERVER

@@ -3010,6 +3010,23 @@ async function initializeApp() {
 
 }
 
+async function loadCommitId() {
+    try {
+        const response = await fetch("/api/commit");
+        const data = await response.json();
+
+        const commitElement = document.getElementById("commitId");
+
+        if (commitElement) {
+            commitElement.textContent = data.commit;
+        }
+    } catch (error) {
+        console.error("Failed to load commit ID:", error);
+    }
+}
+
+loadCommitId();
+
 
 /* =========================================================
    START APPLICATION
