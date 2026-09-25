@@ -41,34 +41,18 @@ app.get("/api/health", (req, res) => {
 // ===============================
 
 async function startServer() {
+    app.listen(PORT, () => {
+        console.log(`ProjectFlow running on port ${PORT}`);
+    });
 
     try {
-
         await mongoose.connect(process.env.MONGO_URI);
-
         console.log("MongoDB connected successfully!");
-
-        app.listen(PORT, () => {
-
-            console.log(
-                `ProjectFlow running on port ${PORT}`
-            );
-
-        });
-
     } catch (error) {
-
-        console.error(
-            "MongoDB connection failed:"
-        );
-
+        console.error("MongoDB connection failed:");
         console.error(error.message);
-
     }
-
 }
-
-
 // ===============================
 // START ONLY WHEN RUN DIRECTLY
 // ===============================
