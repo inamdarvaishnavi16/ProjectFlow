@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ProjectFlow | Project Management</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+
+<body>
+
+    <!-- ========================= -->
+    <!-- APP LAYOUT -->
+    <!-- ========================= -->
+
+    <div class="app">
+
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    PF
+                </div>
+
+                <div>
+                    <h1>ProjectFlow</h1>
+                    <span>Project Management</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">
+                    WORKSPACE
+                </p>
+
+                <a
+                    href="#dashboard"
+                    class="nav-item active"
+                    data-section="dashboard"
+                >
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="#projects"
+                    class="nav-item"
+                    data-section="projects"
+                >
+                    <span class="nav-icon">▦</span>
+                    <span>Projects</span>
+                </a>
+
+
+                <a
+                    href="#tasks"
+                    class="nav-item"
+                    data-section="tasks"
+                >
+                    <span class="nav-icon">✓</span>
+                    <span>Tasks</span>
+                </a>
+
+
+                <a
+                    href="#activity"
+                    class="nav-item"
+                    data-section="activity"
+                >
+                    <span class="nav-icon">◷</span>
+                    <span>Activity</span>
+                </a>
+
+
+                <a
+                    href="#team"
+                    class="nav-item"
+                    data-section="team"
+                >
+                    <span class="nav-icon">♙</span>
+                    <span>Team</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-info">
+
+                    <div class="info-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>ProjectFlow</strong>
+                        <span>Student workspace</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ========================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================= -->
+
+        <main class="main-content">
+
+
+            <!-- ========================= -->
+            <!-- TOP HEADER -->
+            <!-- ========================= -->
+
+            <header class="topbar">
+
+                <div class="mobile-brand">
+                    ProjectFlow
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button
+                        class="secondary-btn"
+                        id="addMemberBtn"
+                    >
+                        + Add Member
+                    </button>
+
+
+                    <button
+                        class="primary-btn"
+                        id="newProjectBtn"
+                    >
+                        + New Project
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ========================= -->
+            <!-- DASHBOARD -->
+            <!-- ========================= -->
+
+            <section
+                id="dashboard"
+                class="page-section active-section"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            WORKSPACE OVERVIEW
+                        </p>
+
+                        <h2>
+                            Good evening 👋
+                        </h2>
+
+                        <p class="heading-subtitle">
+                            Here's what's happening across your projects.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn desktop-new-project"
+                        id="dashboardNewProject"
+                    >
+                        + New Project
+                    </button>
+
+                </div>
+
+
+
+                <!-- ========================= -->
+                <!-- STAT CARDS -->
+                <!-- ========================= -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                TOTAL PROJECTS
+                            </span>
+
+                            <div class="stat-icon purple">
+                                ▦
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="totalProjects"
+                        >
+                            0
+                        </div>
+
+                        <p class="stat-description">
+                            Active projects
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                TOTAL TASKS
+                            </span>
+
+                            <div class="stat-icon blue">
+                                ✓
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="totalTasks"
+                        >
+                            0
+                        </div>
+
+                        <p class="stat-description">
+                            Across all projects
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                COMPLETED
+                            </span>
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="completedTasks"
+                        >
+                            0
+                        </div>
+
+                        <p class="stat-description">
+                            Tasks completed
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                OVERDUE
+                            </span>
+
+                            <div class="stat-icon red">
+                                !
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="stat-number"
+                            id="overdueTasks"
+                        >
+                            0
+                        </div>
+
+                        <p class="stat-description">
+                            Needs attention
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================= -->
+                <!-- OVERALL PROGRESS -->
+                <!-- ========================= -->
+
+                <section class="dashboard-card progress-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-kicker">
+                                PERFORMANCE
+                            </p>
+
+                            <h3>
+                                Overall Progress
+                            </h3>
+
+                        </div>
+
+                        <div
+                            class="progress-percentage"
+                            id="progressText"
+                        >
+                            0%
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                            style="width: 0%"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="progress-meta">
+
+                        <span>
+                            Project completion
+                        </span>
+
+                        <span>
+                            Based on completed tasks
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ========================= -->
+                <!-- PROJECTS PREVIEW -->
+                <!-- ========================= -->
+
+                <section class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-kicker">
+                                WORKSPACE
+                            </p>
+
+                            <h3>
+                                My Projects
+                            </h3>
+
+                            <p class="section-description">
+                                Track each project's tasks, deadlines and individual progress.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="text-btn"
+                            id="viewProjectsBtn"
+                        >
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="projectsContainer"
+                        class="projects-grid"
+                    >
+
+                        <div class="loading-state">
+                            Loading projects...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ========================= -->
+                <!-- TASK OVERVIEW -->
+                <!-- ========================= -->
+
+                <section class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-kicker">
+                                WORK MANAGEMENT
+                            </p>
+
+                            <h3>
+                                Task Overview
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="secondary-btn small-btn"
+                            id="dashboardAddTaskBtn"
+                        >
+                            + Add Task
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        TASK
+                                    </th>
+
+                                    <th>
+                                        PROJECT
+                                    </th>
+
+                                    <th>
+                                        ASSIGNED TO
+                                    </th>
+
+                                    <th>
+                                        DEADLINE
+                                    </th>
+
+                                    <th>
+                                        STATUS
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="dashboardTasksTable">
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="table-empty"
+                                    >
+                                        Loading tasks...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ========================= -->
+                <!-- ACTIVITY -->
+                <!-- ========================= -->
+
+                <section class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-kicker">
+                                TIMELINE
+                            </p>
+
+                            <h3>
+                                Recent Activity
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="activityContainer"
+                        class="activity-list"
+                    >
+
+                        <p class="no-activity">
+                            No activity yet.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- ========================= -->
+            <!-- PROJECTS PAGE -->
+            <!-- ========================= -->
+
+            <section
+                id="projects"
+                class="page-section"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            WORKSPACE
+                        </p>
+
+                        <h2>
+                            Projects
+                        </h2>
+
+                        <p class="heading-subtitle">
+                            Manage your projects and track their progress.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="projectsNewProjectBtn"
+                    >
+                        + New Project
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="projectsPageContainer"
+                    class="projects-grid large-grid"
+                ></div>
+
+            </section>
+
+
+
+            <!-- ========================= -->
+            <!-- TASKS PAGE -->
+            <!-- ========================= -->
+
+            <section
+                id="tasks"
+                class="page-section"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            WORK MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Tasks
+                        </h2>
+
+                        <p class="heading-subtitle">
+                            See exactly who is working on what and for which project.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="addTaskBtn"
+                    >
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="task-toolbar">
+
+                        <div>
+
+                            <h3>
+                                All Tasks
+                            </h3>
+
+                            <p>
+                                Project assignments and deadlines
+                            </p>
+
+                        </div>
+
+                        <select
+                            id="taskFilter"
+                            class="filter-select"
+                        >
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="To Do">
+                                To Do
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        TASK
+                                    </th>
+
+                                    <th>
+                                        PROJECT
+                                    </th>
+
+                                    <th>
+                                        ASSIGNED TO
+                                    </th>
+
+                                    <th>
+                                        DEADLINE
+                                    </th>
+
+                                    <th>
+                                        STATUS
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tasksTableBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="table-empty"
+                                    >
+                                        Loading tasks...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================= -->
+            <!-- ACTIVITY PAGE -->
+            <!-- ========================= -->
+
+            <section
+                id="activity"
+                class="page-section"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            TIMELINE
+                        </p>
+
+                        <h2>
+                            Activity
+                        </h2>
+
+                        <p class="heading-subtitle">
+                            Keep track of everything happening in your workspace.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div
+                        id="activityPageContainer"
+                        class="activity-list large-activity"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================= -->
+            <!-- TEAM PAGE -->
+            <!-- ========================= -->
+
+            <section
+                id="team"
+                class="page-section"
+            >
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PEOPLE
+                        </p>
+
+                        <h2>
+                            Team Members
+                        </h2>
+
+                        <p class="heading-subtitle">
+                            Manage your project team and responsibilities.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="teamAddMemberBtn"
+                    >
+                        + Add Member
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="membersContainer"
+                    class="members-grid"
+                >
+
+                    <div class="loading-state">
+                        Loading team members...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- PROJECT MODAL -->
+    <!-- ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="projectModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="section-kicker">
+                        PROJECT
+                    </p>
+
+                    <h2>
+                        Create New Project
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="projectForm">
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="e.g. Smart Travel Planner"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        placeholder="Describe your project..."
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectTechnology">
+                        Technology
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectTechnology"
+                        placeholder="e.g. Node.js, MongoDB"
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="projectStartDate">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="projectStartDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectDeadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="projectDeadline"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- COLLABORATION -->
+                <!-- ========================= -->
+
+                <div class="collaboration-form-section">
+
+                    <label class="collaboration-toggle">
+
+                        <input
+                            type="checkbox"
+                            id="projectCollaboration"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span class="collaboration-toggle-text">
+
+                            <strong>
+                                Open for Collaboration
+                            </strong>
+
+                            <small>
+                                Allow other students to find and join this project.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <div
+                        id="skillsNeededGroup"
+                        class="form-group collaboration-skills"
+                        style="display: none;"
+                    >
+
+                        <label for="projectSkillsNeeded">
+                            Skills / Role Needed
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectSkillsNeeded"
+                            placeholder="e.g. Frontend Developer, UI/UX Designer"
+                        >
+
+                        <small class="form-help">
+                            Mention the skills or role you are looking for.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelProjectBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Project
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- MEMBER MODAL -->
+    <!-- ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="memberModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="section-kicker">
+                        TEAM
+                    </p>
+
+                    <h2>
+                        Add Team Member
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeMemberModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="memberForm">
+
+                <div class="form-group">
+
+                    <label for="memberName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="memberName"
+                        placeholder="e.g. Vaishnavi Inamdar"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="memberEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="memberEmail"
+                        placeholder="member@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="memberRole">
+                        Role
+                    </label>
+
+                    <input
+                        type="text"
+                        id="memberRole"
+                        placeholder="e.g. Frontend Developer"
+                    >
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelMemberBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Add Member
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- TASK MODAL -->
+    <!-- ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="taskModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="section-kicker">
+                        TASK
+                    </p>
+
+                    <h2>
+                        Create New Task
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeTaskModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <div class="form-group">
+
+                    <label for="taskProject">
+                        Project
+                    </label>
+
+                    <select
+                        id="taskProject"
+                        required
+                    >
+
+                        <option value="">
+                            Select Project
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskTitle">
+                        Task Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="e.g. Build Login Page"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        placeholder="Describe the task..."
+                        rows="3"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskAssignedTo">
+                        Assigned To
+                    </label>
+
+                    <select
+                        id="taskAssignedTo"
+                    >
+
+                        <option value="">
+                            Unassigned
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="taskDeadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="taskDeadline"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taskStatus">
+                            Status
+                        </label>
+
+                        <select id="taskStatus">
+
+                            <option value="To Do">
+                                To Do
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelTaskBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
