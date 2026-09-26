@@ -160,4 +160,24 @@ describe("ProjectFlow API Tests", () => {
 
     });
 
+
+    // ===============================
+    // COMMIT ID API
+    // ===============================
+
+    test("GET /api/commit should return a commit identifier", async () => {
+
+        const response =
+            await request(app)
+                .get("/api/commit");
+
+        expect(response.statusCode).toBe(200);
+
+        expect(response.body).toHaveProperty("commit");
+
+        expect(typeof response.body.commit)
+            .toBe("string");
+
+    });
+
 });
